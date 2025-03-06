@@ -21,6 +21,27 @@
 	left: 30vw;
 	z-index: 100;
 }
+.best-score {
+    position: fixed;
+    z-index: 10;
+    top: 10px;  
+    right: 10px; 
+    font-size: 5vh;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.best_score_val {
+    color: gold;
+}
+
+
 .pipe_sprite {
 	position: fixed;
 	top: 40vh;
