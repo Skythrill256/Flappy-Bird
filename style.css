@@ -13,6 +13,55 @@
     -o-background-size: cover;
     background-size: cover;
 }
+
+.header {
+    background-color: rgba(24, 112, 235, 0.8); /* Light blue with transparency */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 3em;
+    color: #fff;
+	text-align: left;
+}
+
+.header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.header nav ul li {
+    display: inline;
+    margin: 0 25px;
+    font-size: 1.2em;
+    color: #fff;
+}
+.header nav ul li:hover{
+	box-shadow: 2px red underline;
+	font-size: 1.4em;
+	color: black;
+	font-weight: 700;
+}
+
+/* Main Content Styles */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+.game-area {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 .bird {
 	height: 100px;
 	width: 130px;
@@ -22,23 +71,25 @@
 	z-index: 100;
 }
 .best-score {
-    position: fixed;
+    position: center;
+	margin-top:20px;
     z-index: 10;
     top: 10px;  
     right: 10px; 
     font-size: 5vh;
     font-weight: bold;
-    color: white;
+    color: rgb(240, 10, 10);
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: rgb(53, 52, 52);
     font-family: Arial, Helvetica, sans-serif;
     background: rgba(0, 0, 0, 0.6); 
     padding: 10px 20px;
     border-radius: 8px;
 }
 
+
 .best_score_val {
-    color: gold;
+    color: rgb(255, 191, 0);
 }
 
 
@@ -52,7 +103,7 @@
 	border: 5px solid black;
 }
 .message {
-	position: absolute;
+	position:absolute;
 	z-index: 10;
 	color: black;
 	top: 30%;
@@ -60,6 +111,7 @@
 	font-size: 4em;
 	transform: translate(-50%, -50%);
 	text-align: center;
+	margin-top: 240px;
 }
 .messageStyle{
 	background: white;
@@ -84,6 +136,42 @@
 .score_val {
 	color: gold;
 	font-weight: bold;
+}
+ 
+
+.sidebar {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+	background-color: rgba(135, 206, 235, 0.8); /* Light blue with transparency */
+    position: relative;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+    }
+	.header nav ul li {
+        margin: 0 10px;
+        font-size: 1em;
+    }
 }
 @media only screen and (max-width: 1080px) {
     .message{
