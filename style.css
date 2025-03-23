@@ -35,12 +35,29 @@
     background: rgba(0, 0, 0, 0.6); 
     padding: 10px 20px;
     border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.best-score:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
 }
 
 .best_score_val {
     color: gold;
 }
 
+.heading {
+    position: absolute;
+    top: 15%; /* Adjusted from 10% to 8% */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7em; /* Increased from 6em to 8em */
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-align: center;
+}
 
 .pipe_sprite {
 	position: fixed;
@@ -55,18 +72,38 @@
 	position: absolute;
 	z-index: 10;
 	color: black;
-	top: 30%;
+	top: 50%;
 	left: 50%;
 	font-size: 4em;
 	transform: translate(-50%, -50%);
 	text-align: center;
+    display: flex;
+    gap: 20px;
 }
-.messageStyle{
+
+.message button {
+    background: white;
+    padding: 25px; /* Reduced from 30px to 10px */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5%;
+    font-size: 0.8em; /* Reduced text size */
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.message button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* .messageStyle{
 	background: white;
 	padding: 30px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	border-radius: 5%;
-}
+} */
 .score {
 	position: fixed;
 	z-index: 10;
@@ -85,20 +122,90 @@
 	color: gold;
 	font-weight: bold;
 }
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 28px; /* Reduced from 15px 32px to 12px 28px */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Reduced from 16px to 14px */
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #3e8e41;
+    transform: scale(1);
+}
+
 @media only screen and (max-width: 1080px) {
-    .message{
-		font-size: 50px;
-		top: 50%;
-		white-space: nowrap;
-	}
-	.score{
-		font-size: 8vh;
-	}
-	.bird{
-		width: 120px;
-		height: 90px;
-	}
-	.pipe_sprite{
-		width: 14vw;
-	}
+    .message {
+        font-size: 4vh;
+        top: 50%;
+        white-space: nowrap;
+    }
+    .score {
+        font-size: 8vh;
+    }
+    .bird {
+        width: 12vw;
+        height: auto;
+    }
+    .pipe_sprite {
+        width: 14vw;
+    }
+    .button {
+        padding: 1.2vh 2.4vh;
+        font-size: 1.4vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .message {
+        font-size: 3.5vh;
+    }
+    .score {
+        font-size: 7vh;
+    }
+    .bird {
+        width: 13vw;
+        height: auto;
+    }
+    .pipe_sprite {
+        width: 16vw;
+    }
+    .button {
+        padding: 1vh 2vh;
+        font-size: 1.2vh;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .message {
+        font-size: 3vh;
+    }
+    .score {
+        font-size: 6vh;
+    }
+    .bird {
+        width: 15vw;
+        height: auto;
+    }
+    .pipe_sprite {
+        width: 18vw;
+    }
+    .button {
+        padding: 0.8vh 1.6vh;
+        font-size: 1vh;
+    }
 }
