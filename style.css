@@ -148,6 +148,58 @@
     transform: scale(1);
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: #ff4c4c;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+.replay-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.replay-btn:hover {
+    background-color: #45a049;
+}
+
 @media only screen and (max-width: 1080px) {
     .message {
         font-size: 4vh;
