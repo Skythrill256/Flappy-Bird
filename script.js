@@ -50,13 +50,13 @@ function play() {
                     bird_props.left + bird_props.width > pipe_sprite_props.left &&
                     bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height &&
                     bird_props.top + bird_props.height > pipe_sprite_props.top) {
-                    game_state = 'End';
-                    message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Press Enter To Restart';
-                    message.classList.add('messageStyle');
-                    img.style.display = 'none';
-                    sound_die.play();
-                    updateBestScore(parseInt(score_val.innerHTML));
-                    return;
+                        game_state = 'End';
+                        img.style.display = 'none';
+                        sound_die.play();
+                        updateBestScore(parseInt(score_val.innerHTML));
+                        showGameOverModal(parseInt(score_val.innerHTML));
+                        return;
+                        
                 } else {
                     if (pipe_sprite_props.right < bird_props.left &&
                         pipe_sprite_props.right + move_speed >= bird_props.left &&
@@ -139,3 +139,22 @@ function updateBestScore(score) {
         best_score_val.innerHTML = best_score;
     }
 }
+
+function showGameOverModal(score) {
+    const modal = document.getElementById('gameOverModal');
+    const finalScore = document.getElementById('finalScore');
+    const bestScoreDisplay = document.getElementById('bestScore');
+    finalScore.innerHTML = `Your Score: ${score}`;
+    bestScoreDisplay.innerHTML = `Best Score: ${best_score}`;
+    modal.style.display = 'block';
+}
+
+function replayGame(){
+    document.getElementById('gameOverModal').style.display = 'none';
+    document.querySelectorAll('.pipe_sprite').forEach((e) => e.remove());
+    bird.style.top='40vh';
+    score_val.innerHTML='0';
+    game_state='Play';
+    play();
+}
+
